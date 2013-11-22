@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!-- saved from url=(0122)https://webcache.googleusercontent.com/search?q=cache:j3vnZtvvSpYJ:archieyang.info/%3Fp%3D146+&cd=7&hl=zh-CN&ct=clnk&gl=cn -->
+<html lang="zh-CN" class="no-js" x-terminal-for-google=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="http://archieyang.info/?p=146">--><base href="."></head><body class="single single-post postid-146 single-format-standard custom-background single-author"><div style="background:#fff;border:1px solid #999;margin:-1px -1px 0;padding:0;"><div style="background:#ddd;border:1px solid #999;color:#000;font:13px arial,sans-serif;font-weight:normal;margin:12px;padding:8px;text-align:left">这是 Google 对 <a href="http://archieyang.info/?p=146" style="text-decoration:underline;color:#00c">http://archieyang.info/?p=146</a> 的缓存。 这是该网页在 2013年11月15日 02:07:05 GMT 的快照。 <a href="http://archieyang.info/?p=146" style="text-decoration:underline;color:#00c">当前页</a>在此期间可能已经更改。 <a href="http://support.google.com/websearch/bin/answer.py?hl=zh-CN&p=cached&answer=1687222" style="text-decoration:underline;color:#00c">了解详情</a><br>提示：要在此页面上快速找到您的搜索字词，请按 <b>Ctrl+F</b> 或者 <b>⌘-F</b>（苹果机），然后使用查找栏搜索。<br><br><div style="float:right"><a href="http://webcache.googleusercontent.com/search?q=cache:j3vnZtvvSpYJ:archieyang.info/%3Fp%3D146&newwindow=1&hl=zh-CN&gl=cn&strip=1" style="text-decoration:underline;color:#00c">纯文字版本</a></div>
+<div>&nbsp;</div></div></div><div style="position:relative">
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>World Overflow | Python那些事儿（4）实现类似于序列和字典行为的类</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://archieyang.info/wp/xmlrpc.php">
+
+
+<link rel="alternate" type="application/rss+xml" title="World Overflow » Feed" href="http://archieyang.info/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="World Overflow » 评论 Feed" href="http://archieyang.info/?feed=comments-rss2">
+<link rel="stylesheet" id="wm-css" href="./World Overflow   Python那些事儿（4）实现类似于序列和字典行为的类_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="newsworthy_style-css" href="./World Overflow   Python那些事儿（4）实现类似于序列和字典行为的类_files/style(1).css" type="text/css" media="all">
+<script type="text/javascript" src="./World Overflow   Python那些事儿（4）实现类似于序列和字典行为的类_files/modernizr-2.6.1.min.js"></script>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（4）实现类似于序列和字典行为的类_files/jquery.js"></script>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（4）实现类似于序列和字典行为的类_files/scripts.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://archieyang.info/wp/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://archieyang.info/wp/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Sublime Text 2的Python插件" href="http://archieyang.info/?p=142">
+<link rel="next" title="Python那些事儿（5）使用Property函数创建属性" href="http://archieyang.info/?p=161">
+<meta name="generator" content="WordPress 3.5.1">
+<link rel="canonical" href="http://archieyang.info/?p=146">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #f2f2f2; background-image: url('http://archieyang.info/wp/wp-content/themes/newsworthy/library/images/bg.jpg'); background-repeat: repeat; background-position: top left; background-attachment: fixed; }
+</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+
+
+
+
+<nav id="access" role="navigation">
+    <div id="nav-wrap">
+            <h1 class="assistive-text section-heading">Main menu</h1>
+            <div class="skip-link screen-reader-text"><a href="http://archieyang.info/?p=146#content" title="Skip to content">Skip to content</a></div>
+            <div class="menu"><ul><li><a href="http://archieyang.info/" title="首页">首页</a></li><li class="page_item page-item-5"><a href="http://archieyang.info/?page_id=5">关于</a></li></ul></div>
+            
+    </div>
+</nav><!-- #access -->
+
+<div id="container">
+	<header id="branding" role="banner">
+      <div id="inner-header" class="clearfix">
+		<hgroup id="site-heading">
+			<h1 id="site-title"><a href="http://archieyang.info/" title="World Overflow" rel="home">World Overflow</a></h1>
+			<h2 id="site-description">archieyang.info | A very personal blog</h2>
+		</hgroup>
+        
+        <form role="search" method="get" id="searchform" action="http://archieyang.info/">
+	<div><label class="screen-reader-text" for="s">搜索：</label>
+	<input type="text" value="" name="s" id="s">
+	<input type="submit" id="searchsubmit" value="搜索">
+	</div>
+	</form>
+      </div>    
+      
+	</header><!-- #branding -->
+
+    <div id="content" class="clearfix">
+        
+        <div id="main" class="col620 clearfix" role="main">
+
+			
+				
+<article id="post-146" class="post-146 post type-post status-publish format-standard hentry category-python category-15 tag-dict tag-list tag-python tag-23">
+	<div class="posted-meta">
+    	<div class="date-meta">
+        	<a href="http://archieyang.info/?p=146" rel="bookmark">03.17.13</a>
+        </div>
+        <div class="author-meta">
+        	by <a class="url fn n" href="http://archieyang.info/?author=1" title="View all posts by archieyang" rel="author">archieyang</a>        </div>
+    </div>
+	<header class="entry-header">
+		<h1 class="entry-title">Python那些事儿（4）实现类似于序列和字典行为的类</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content post_content">
+		<h1>1.基本概念</h1>
+<p>使用一些有用的魔法方法，可以创建具有类似于序列和字典行为的对象。这里涉及的方法有__len__(self), __getitem__(self, key)__, __setitem(self, key, value)以及__delitem__(self, key)。</p>
+<pre class="brush: python; title: ; notranslate" title="">__len__(self)</pre>
+<p>返回集合中所含item的数量。</p>
+<pre class="brush: python; title: ; notranslate" title="">__getitem__(self, key)</pre>
+<p>返回指定key对应的item的value。</p>
+<pre class="brush: python; title: ; notranslate" title="">__setitem__(self, key, value)</pre>
+<p>按一定的方式存储key的对应的value。</p>
+<pre class="brush: python; title: ; notranslate" title="">__delitem__(self, key)</pre>
+<p>删除key对应的item（包含key和value）。</p>
+<p><span id="more-146"></span></p>
+<h1>2.实例</h1>
+<p>下面创建一个无穷序列类型ArithmeticSequence作为一个具有类似于序列行为的实例。</p>
+<pre class="brush: python; title: ; notranslate" title="">def checkIndex(key)
+    if not is instance(key, (int, long)): raise TypeError
+    if &nbsp;key &lt; 0: raise IndexError
+class ArithmeticSequence：
+    def __init__(self , start=0, step=1 ):
+        self.start = start
+        self.step = step
+        self.changed = {}
+    def __getitem__(self, key):
+        checkIndex(key）
+        try: return self.changed[key]
+        except:
+            return self.start + key * self.step
+    def __setitem__(self, key, value):
+        checkIndex(key)
+        self.changed[key] = value
+</pre>
+<p>我们希望这个序列是不可被删除的，所以这里没有实现__delitem__(self, key)函数。<br>
+由于是无穷序列，这里也没有实现__len__(self)函数。</p>
+<p>现在，在初始化这个类之后，可以像一个普通的序列一样操作它：</p>
+<pre class="brush: python; title: ; notranslate" title="">&gt;&gt;&gt; s = ArithmeticSequence(1, 2)
+&gt;&gt;&gt; s[4]
+9
+&gt;&gt;&gt; s[4] = 2
+&gt;&gt;&gt; s[4]
+2
+&gt;&gt;&gt; s[5]
+11
+</pre>
+<p>从上面可以看出，类型ArithmeticSequence的实例具有和序列类似的操作。<br>
+3.通过继承简化类型的定义<br>
+本文之前描述了为了使得一个类具有类似序列和字典行为时，需要实现的4种基本参数。官方的语言规范也列出了推荐实现的一些其他的函数，包括之前提到的__iter__。但是实现所有这些方法的工作是很繁重的，这里可以使用继承来简化操作。<br>
+例如，可以通过子类化list(内建列表)来实现一个和list行为相似的序列。</p>
+<pre class="brush: python; title: ; notranslate" title="">class CounterList(list):
+    def __init__(self, *args):
+        super(CounterList, self).__init__(*args)
+        self.counter = 0
+    def __getitem__(self, key):
+        self.counter = 1
+        return super(CounterList, self).__getitem__(index)
+</pre>
+<p>这里只重写了list的两个方法：__init__和__getitem__，实现了对访问次数的统计。<br>
+注意，这里只是为示例使用，实际上这个方法统计访问列表次数并不严谨，因为用户还能通过pop等方法反问列表元素。<br>
+实际使用CounterList的例子:</p>
+<pre class="brush: python; title: ; notranslate" title="">&gt;&gt;&gt; cl = CounterList(range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+&gt;&gt;&gt; cl.reverse()
+&gt;&gt;&gt; cl
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+&gt;&gt;&gt; cl.del[3:6]
+[9, 8, 7, 3, 2, 1, 0]
+&gt;&gt;&gt; cl.counter
+0
+&gt;&gt;&gt; cl[2] + cl[4]
+12
+&gt;&gt;&gt; cl.counter
+2</pre>
+<h1>写在最后</h1>
+<p>本文实现了一种具有类似列表和词典行为的类型。实际上Python中还有很多伪装的方法，来实现特定的操作。比如通过拦截对类型属性的访问来改变在访问其属性时类型内部的行为。下一篇将详细介绍用于拦截对类属性的访问的方法Property。</p>
+<h1>参考</h1>
+<p>1. 《Python 基础教程》</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://archieyang.info/?cat=14" title="查看 Python 中的全部文章" rel="category">Python</a>, <a href="http://archieyang.info/?cat=15" title="查看 编程语言 中的全部文章" rel="category">编程语言</a> and tagged <a href="http://archieyang.info/?tag=dict" rel="tag">dict</a>, <a href="http://archieyang.info/?tag=list" rel="tag">list</a>, <a href="http://archieyang.info/?tag=python" rel="tag">Python</a>, <a href="http://archieyang.info/?tag=%e9%ad%94%e6%b3%95%e6%96%b9%e6%b3%95" rel="tag">魔法方法</a>. Bookmark the <a href="http://archieyang.info/?p=146" title="Permalink to Python那些事儿（4）实现类似于序列和字典行为的类" rel="bookmark">permalink</a>.
+			</footer><!-- .entry-meta -->
+</article><!-- #post-146 -->
+
+					<nav id="nav-below">
+		<h1 class="assistive-text section-heading">Post navigation</h1>
+
+	
+		<div class="nav-previous"><a href="http://archieyang.info/?p=142" rel="prev"><span class="meta-nav">←</span> Previous</a></div>		<div class="nav-next"><a href="http://archieyang.info/?p=161" rel="next">Next <span class="meta-nav">→</span></a></div>
+	
+	</nav><!-- #nav-below -->
+	
+				
+			
+        </div> <!-- end #main -->
+
+        		<div id="sidebar" class="widget-area col300" role="complementary">
+						<aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-33"><a href="http://archieyang.info/?cat=33" title="查看 Android 下的所有文章">Android</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://archieyang.info/?cat=12" title="查看 Coursera 下的所有文章">Coursera</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://archieyang.info/?cat=7" title="查看 Linux 下的所有文章">Linux</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://archieyang.info/?cat=14" title="查看 Python 下的所有文章">Python</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://archieyang.info/?cat=5" title="查看 一种生活 下的所有文章">一种生活</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://archieyang.info/?cat=15" title="查看 编程语言 下的所有文章">编程语言</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="http://archieyang.info/?cat=30" title="查看 翻译 下的所有文章">翻译</a>
+</li>
+		</ul>
+</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h2 class="widget-title">标签</h2><div class="tagcloud"><a href="http://archieyang.info/?tag=actionbar" class="tag-link-34" title="1 个话题" style="font-size: 8pt;">ActionBar</a>
+<a href="http://archieyang.info/?tag=actionbarsherlock" class="tag-link-35" title="1 个话题" style="font-size: 8pt;">ActionBarSherlock</a>
+<a href="http://archieyang.info/?tag=android" class="tag-link-33" title="1 个话题" style="font-size: 8pt;">Android</a>
+<a href="http://archieyang.info/?tag=cent-os" class="tag-link-10" title="1 个话题" style="font-size: 8pt;">Cent OS</a>
+<a href="http://archieyang.info/?tag=classmethod" class="tag-link-32" title="1 个话题" style="font-size: 8pt;">classmethod</a>
+<a href="http://archieyang.info/?tag=coursera" class="tag-link-12" title="1 个话题" style="font-size: 8pt;">Coursera</a>
+<a href="http://archieyang.info/?tag=decorators" class="tag-link-18" title="1 个话题" style="font-size: 8pt;">Decorators</a>
+<a href="http://archieyang.info/?tag=descriptor" class="tag-link-28" title="2 个话题" style="font-size: 11.6pt;">descriptor</a>
+<a href="http://archieyang.info/?tag=dict" class="tag-link-25" title="1 个话题" style="font-size: 8pt;">dict</a>
+<a href="http://archieyang.info/?tag=django" class="tag-link-42" title="1 个话题" style="font-size: 8pt;">django</a>
+<a href="http://archieyang.info/?tag=linux" class="tag-link-7" title="1 个话题" style="font-size: 8pt;">Linux</a>
+<a href="http://archieyang.info/?tag=list" class="tag-link-24" title="1 个话题" style="font-size: 8pt;">list</a>
+<a href="http://archieyang.info/?tag=list-comprehension" class="tag-link-16" title="1 个话题" style="font-size: 8pt;">List Comprehension</a>
+<a href="http://archieyang.info/?tag=property" class="tag-link-26" title="2 个话题" style="font-size: 11.6pt;">property</a>
+<a href="http://archieyang.info/?tag=python" class="tag-link-14" title="9 个话题" style="font-size: 22pt;">Python</a>
+<a href="http://archieyang.info/?tag=requestcontext" class="tag-link-43" title="1 个话题" style="font-size: 8pt;">RequestContext</a>
+<a href="http://archieyang.info/?tag=staticmethod" class="tag-link-31" title="1 个话题" style="font-size: 8pt;">staticmethod</a>
+<a href="http://archieyang.info/?tag=sublime-text-2" class="tag-link-21" title="1 个话题" style="font-size: 8pt;">Sublime Text 2</a>
+<a href="http://archieyang.info/?tag=with-statement" class="tag-link-17" title="1 个话题" style="font-size: 8pt;">with statement</a>
+<a href="http://archieyang.info/?tag=%e4%b8%8b%e8%bd%bd" class="tag-link-13" title="1 个话题" style="font-size: 8pt;">下载</a>
+<a href="http://archieyang.info/?tag=%e6%88%90%e9%95%bf" class="tag-link-9" title="1 个话题" style="font-size: 8pt;">成长</a>
+<a href="http://archieyang.info/?tag=%e6%8f%92%e4%bb%b6" class="tag-link-22" title="1 个话题" style="font-size: 8pt;">插件</a>
+<a href="http://archieyang.info/?tag=%e6%97%a7%e5%bc%8f%e7%b1%bb%e5%9e%8b" class="tag-link-29" title="1 个话题" style="font-size: 8pt;">旧式类型</a>
+<a href="http://archieyang.info/?tag=%e7%94%9f%e6%88%90%e5%99%a8" class="tag-link-20" title="1 个话题" style="font-size: 8pt;">生成器</a>
+<a href="http://archieyang.info/?tag=%e7%94%9f%e6%b4%bb" class="tag-link-8" title="1 个话题" style="font-size: 8pt;">生活</a>
+<a href="http://archieyang.info/?tag=%e7%bf%bb%e8%af%91" class="tag-link-30" title="1 个话题" style="font-size: 8pt;">翻译</a>
+<a href="http://archieyang.info/?tag=%e8%ae%bf%e9%97%ae%e5%99%a8" class="tag-link-27" title="2 个话题" style="font-size: 11.6pt;">访问器</a>
+<a href="http://archieyang.info/?tag=%e8%bf%9c%e7%a8%8b%e6%a1%8c%e9%9d%a2" class="tag-link-11" title="1 个话题" style="font-size: 8pt;">远程桌面</a>
+<a href="http://archieyang.info/?tag=%e8%bf%ad%e4%bb%a3%e5%99%a8" class="tag-link-19" title="1 个话题" style="font-size: 8pt;">迭代器</a>
+<a href="http://archieyang.info/?tag=%e9%ad%94%e6%b3%95%e6%96%b9%e6%b3%95" class="tag-link-23" title="1 个话题" style="font-size: 8pt;">魔法方法</a></div>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://archieyang.info/?p=257" title="django中的RequestContext">django中的RequestContext</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=247" title="如何使用ActionBarSherlock[翻译]">如何使用ActionBarSherlock[翻译]</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=172" title="Python那些事儿（7）Descriptor Howto Guide的翻译">Python那些事儿（7）Descriptor Howto Guide的翻译</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=157" title="Python 那些事儿（6）拦截对象的属性访问">Python 那些事儿（6）拦截对象的属性访问</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=161" title="Python那些事儿（5）使用Property函数创建属性">Python那些事儿（5）使用Property函数创建属性</a>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments">Lee 发表在《<a href="http://archieyang.info/?page_id=5#comment-12">关于</a>》</li><li class="recentcomments">Lei 发表在《<a href="http://archieyang.info/?page_id=5#comment-11">关于</a>》</li><li class="recentcomments">Lee 发表在《<a href="http://archieyang.info/?page_id=5#comment-10">关于</a>》</li><li class="recentcomments"><a href="http://groups.tianya.cn/tribe/showArticle.jsp?groupId=551332&articleId=ce0926b7e6aa45615d38fbb471b047a0" rel="external nofollow" class="url">alvena</a> 发表在《<a href="http://archieyang.info/?p=157#comment-9">Python 那些事儿（6）拦截对象的属性访问</a>》</li><li class="recentcomments">funny 发表在《<a href="http://archieyang.info/?page_id=5#comment-7">关于</a>》</li></ul></aside><aside id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href="http://archieyang.info/?m=201305" title="2013 年五月">2013 年五月</a></li>
+	<li><a href="http://archieyang.info/?m=201303" title="2013 年三月">2013 年三月</a></li>
+	<li><a href="http://archieyang.info/?m=201301" title="2013 年一月">2013 年一月</a></li>
+	<li><a href="http://archieyang.info/?m=201212" title="2012 年十二月">2012 年十二月</a></li>
+	<li><a href="http://archieyang.info/?m=201211" title="2012 年十一月">2012 年十一月</a></li>
+		</ul>
+</aside><aside id="text-3" class="widget widget_text"><h2 class="widget-title">豆瓣秀</h2>			<div class="textwidget"><script type="text/javascript" src="./World Overflow   Python那些事儿（4）实现类似于序列和字典行为的类_files/saved_resource"></script>
+<br>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（4）实现类似于序列和字典行为的类_files/saved_resource(1)"></script></div>
+		</aside>		</div><!-- #secondary .widget-area -->
+
+    </div> <!-- end #content -->
+        
+
+	<footer id="colophon" role="contentinfo">
+		<div id="site-generator">
+			© World Overflow            		</div>
+	</footer><!-- #colophon -->
+</div><!-- #container -->
+
+<script type="text/javascript" src="./World Overflow   Python那些事儿（4）实现类似于序列和字典行为的类_files/shCore.js"></script>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（4）实现类似于序列和字典行为的类_files/shBrushPython.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://archieyang.info/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://archieyang.info/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '帮助';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = '无法找到Brush：';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush不能设置 html-script选项';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+
+</div></body></html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!-- saved from url=(0122)https://webcache.googleusercontent.com/search?q=cache:L1X7p8an-eYJ:archieyang.info/%3Fp%3D157+&cd=5&hl=zh-CN&ct=clnk&gl=cn -->
+<html lang="zh-CN" class="no-js" x-terminal-for-google=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="http://archieyang.info/?p=157">--><base href="."></head><body class="single single-post postid-157 single-format-standard custom-background single-author"><div style="background:#fff;border:1px solid #999;margin:-1px -1px 0;padding:0;"><div style="background:#ddd;border:1px solid #999;color:#000;font:13px arial,sans-serif;font-weight:normal;margin:12px;padding:8px;text-align:left">这是 Google 对 <a href="http://archieyang.info/?p=157" style="text-decoration:underline;color:#00c">http://archieyang.info/?p=157</a> 的缓存。 这是该网页在 2013年11月13日 12:05:15 GMT 的快照。 <a href="http://archieyang.info/?p=157" style="text-decoration:underline;color:#00c">当前页</a>在此期间可能已经更改。 <a href="http://support.google.com/websearch/bin/answer.py?hl=zh-CN&p=cached&answer=1687222" style="text-decoration:underline;color:#00c">了解详情</a><br>提示：要在此页面上快速找到您的搜索字词，请按 <b>Ctrl+F</b> 或者 <b>⌘-F</b>（苹果机），然后使用查找栏搜索。<br><br><div style="float:right"><a href="http://webcache.googleusercontent.com/search?q=cache:L1X7p8an-eYJ:archieyang.info/%3Fp%3D157&newwindow=1&hl=zh-CN&gl=cn&strip=1" style="text-decoration:underline;color:#00c">纯文字版本</a></div>
+<div>&nbsp;</div></div></div><div style="position:relative">
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>World Overflow | Python 那些事儿（6）拦截对象的属性访问</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://archieyang.info/wp/xmlrpc.php">
+
+
+<link rel="alternate" type="application/rss+xml" title="World Overflow » Feed" href="http://archieyang.info/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="World Overflow » 评论 Feed" href="http://archieyang.info/?feed=comments-rss2">
+<link rel="alternate" type="application/rss+xml" title="World Overflow » Python 那些事儿（6）拦截对象的属性访问 评论 Feed" href="http://archieyang.info/?feed=rss2&p=157">
+<link rel="stylesheet" id="wm-css" href="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="newsworthy_style-css" href="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/style(1).css" type="text/css" media="all">
+<script type="text/javascript" src="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/modernizr-2.6.1.min.js"></script>
+<script type="text/javascript" src="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/jquery.js"></script>
+<script type="text/javascript" src="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/scripts.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://archieyang.info/wp/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://archieyang.info/wp/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Python那些事儿（5）使用Property函数创建属性" href="http://archieyang.info/?p=161">
+<link rel="next" title="Python那些事儿（7）Descriptor Howto Guide的翻译" href="http://archieyang.info/?p=172">
+<meta name="generator" content="WordPress 3.5.1">
+<link rel="canonical" href="http://archieyang.info/?p=157">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #f2f2f2; background-image: url('http://archieyang.info/wp/wp-content/themes/newsworthy/library/images/bg.jpg'); background-repeat: repeat; background-position: top left; background-attachment: fixed; }
+</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+
+
+
+
+<nav id="access" role="navigation">
+    <div id="nav-wrap">
+            <h1 class="assistive-text section-heading">Main menu</h1>
+            <div class="skip-link screen-reader-text"><a href="http://archieyang.info/?p=157#content" title="Skip to content">Skip to content</a></div>
+            <div class="menu"><ul><li><a href="http://archieyang.info/" title="首页">首页</a></li><li class="page_item page-item-5"><a href="http://archieyang.info/?page_id=5">关于</a></li></ul></div>
+            
+    </div>
+</nav><!-- #access -->
+
+<div id="container">
+	<header id="branding" role="banner">
+      <div id="inner-header" class="clearfix">
+		<hgroup id="site-heading">
+			<h1 id="site-title"><a href="http://archieyang.info/" title="World Overflow" rel="home">World Overflow</a></h1>
+			<h2 id="site-description">archieyang.info | A very personal blog</h2>
+		</hgroup>
+        
+        <form role="search" method="get" id="searchform" action="http://archieyang.info/">
+	<div><label class="screen-reader-text" for="s">搜索：</label>
+	<input type="text" value="" name="s" id="s">
+	<input type="submit" id="searchsubmit" value="搜索">
+	</div>
+	</form>
+      </div>    
+      
+	</header><!-- #branding -->
+
+    <div id="content" class="clearfix">
+        
+        <div id="main" class="col620 clearfix" role="main">
+
+			
+				
+<article id="post-157" class="post-157 post type-post status-publish format-standard hentry category-python category-15 tag-property tag-python tag-29 tag-27">
+	<div class="posted-meta">
+    	<div class="date-meta">
+        	<a href="http://archieyang.info/?p=157" rel="bookmark">03.17.13</a>
+        </div>
+        <div class="author-meta">
+        	by <a class="url fn n" href="http://archieyang.info/?author=1" title="View all posts by archieyang" rel="author">archieyang</a>        </div>
+    </div>
+	<header class="entry-header">
+		<h1 class="entry-title">Python 那些事儿（6）拦截对象的属性访问</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content post_content">
+		<p>拦截对象所有的属性访问是可能的，这样可以在不使用property方法的情况下实现属性（property）。下面的4种方法提供了需要的功能。</p>
+<pre class="brush: python; title: ; notranslate" title="">__getattribute__(self, name)</pre>
+<p>当name被访问时自动被调用。</p>
+<pre class="brush: python; title: ; notranslate" title="">__getattr__(self, name)</pre>
+<p>当name被访问，且对象没有响应特性时自动被调用。</p>
+<pre class="brush: python; title: ; notranslate" title="">__setattr__(self, name, value)</pre>
+<p>当试图给特性name赋值时会被自动调用。</p>
+<pre class="brush: python; title: ; notranslate" title="">__delattr__(self, name)</pre>
+<p>当试图删除特性name时会被自动调用。</p>
+<p><span id="more-157"></span></p>
+<p>尽管和Property函数相比有些复杂，并且在某些情况下效率更低，但是这些方法是很强大的。<br>
+下面还是实现Rectangle的例子</p>
+<pre class="brush: python; title: ; notranslate" title="">class Rectangle:
+    def __init__(self):
+        self.width = 0
+        self.width = 0
+    def __setattr__(self, name, value):
+        if name == 'size':
+            self.width, self.height = value
+        else:
+            self.__dict__[name] = value
+    def __getattr__(self, name):
+        if name == 'size':
+            return self.width, self.height
+        else:
+            raise AttributeError
+</pre>
+<p>这里有两个需要注意的细节：</p>
+<ol>
+<li><span style="line-height: 13px;">__setattr__方法在试图给所有name赋值时都会被调用，也就是说，在调用的特性名不为”size”时也会被调用。因此，这个方法需要考虑两种情况：在被访问特性为size时，就执行对self.width和self.height的赋值；在被访问特性不是size时，使用__dict__字典，__dict__字典里包含所有的属性，通过__dict__[name]设置对应的值。注意，这里不能直接写成self.name = value。这是因为self.name = value会再次调用__setattr__，导致陷入死循环。同样需要避免陷入死循环的还有__getattribute__：因为__getattribute__会拦截对所有特性的访问，这里也包括对__dict__的访问！因此，在__getattribute__中访问self的相关属性时，使用超类的__getattribute__方法（使用super函数）是唯一安全的方法。</span></li>
+<li>__getattr__方法只在被访问对象没有name属性时才被访问，因此如果name不是size，就说明这个特性不存在，这时只需要抛出一个AttributeError异常。</li>
+</ol>
+<h1>参考</h1>
+<p>1.《Python基础教程》</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://archieyang.info/?cat=14" title="查看 Python 中的全部文章" rel="category">Python</a>, <a href="http://archieyang.info/?cat=15" title="查看 编程语言 中的全部文章" rel="category">编程语言</a> and tagged <a href="http://archieyang.info/?tag=property" rel="tag">property</a>, <a href="http://archieyang.info/?tag=python" rel="tag">Python</a>, <a href="http://archieyang.info/?tag=%e6%97%a7%e5%bc%8f%e7%b1%bb%e5%9e%8b" rel="tag">旧式类型</a>, <a href="http://archieyang.info/?tag=%e8%ae%bf%e9%97%ae%e5%99%a8" rel="tag">访问器</a>. Bookmark the <a href="http://archieyang.info/?p=157" title="Permalink to Python 那些事儿（6）拦截对象的属性访问" rel="bookmark">permalink</a>.
+			</footer><!-- .entry-meta -->
+</article><!-- #post-157 -->
+
+					<nav id="nav-below">
+		<h1 class="assistive-text section-heading">Post navigation</h1>
+
+	
+		<div class="nav-previous"><a href="http://archieyang.info/?p=161" rel="prev"><span class="meta-nav">←</span> Previous</a></div>		<div class="nav-next"><a href="http://archieyang.info/?p=172" rel="next">Next <span class="meta-nav">→</span></a></div>
+	
+	</nav><!-- #nav-below -->
+	
+					<div id="comments">
+	
+	
+			<h2 id="comments-title">
+			One thought on “<span>Python 那些事儿（6）拦截对象的属性访问</span>”		</h2>
+
+
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1" id="li-comment-9">
+        <footer class="clearfix comment-head">
+            <div class="comment-author vcard">
+                <img alt="" src="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/d2b8bb6d0a02a0f0ca50c7733ad59b59" class="avatar avatar-40 photo" height="40" width="40">                
+            </div><!-- .comment-author .vcard -->
+            <cite class="fn"><a href="http://groups.tianya.cn/tribe/showArticle.jsp?groupId=551332&articleId=ce0926b7e6aa45615d38fbb471b047a0" rel="external nofollow" class="url">alvena</a></cite>            
+            <div class="comment-meta commentmetadata">
+                <a href="http://archieyang.info/?p=157#comment-9"><time pubdate="" datetime="2013-04-09T13:16:12+00:00">
+                四月 9, 2013 <br> 1:16 下午                </time></a>
+                            </div><!-- .comment-meta .commentmetadata -->
+        </footer>
+		<article id="comment-9" class="comment">
+			
+
+			<div class="comment-content"><p>这个必须赞一个！</p>
+</div>
+
+			<div class="reply">
+							</div><!-- .reply -->
+            
+		</article><!-- #comment-## -->
+        <div class="clearfix"></div>
+
+	</li>
+		</ol>
+
+		
+	
+			<p class="nocomments">Comments are closed.</p>
+	
+									
+</div><!-- #comments -->
+
+			
+        </div> <!-- end #main -->
+
+        		<div id="sidebar" class="widget-area col300" role="complementary">
+						<aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-33"><a href="http://archieyang.info/?cat=33" title="查看 Android 下的所有文章">Android</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://archieyang.info/?cat=12" title="查看 Coursera 下的所有文章">Coursera</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://archieyang.info/?cat=7" title="查看 Linux 下的所有文章">Linux</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://archieyang.info/?cat=14" title="查看 Python 下的所有文章">Python</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://archieyang.info/?cat=5" title="查看 一种生活 下的所有文章">一种生活</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://archieyang.info/?cat=15" title="查看 编程语言 下的所有文章">编程语言</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="http://archieyang.info/?cat=30" title="查看 翻译 下的所有文章">翻译</a>
+</li>
+		</ul>
+</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h2 class="widget-title">标签</h2><div class="tagcloud"><a href="http://archieyang.info/?tag=actionbar" class="tag-link-34" title="1 个话题" style="font-size: 8pt;">ActionBar</a>
+<a href="http://archieyang.info/?tag=actionbarsherlock" class="tag-link-35" title="1 个话题" style="font-size: 8pt;">ActionBarSherlock</a>
+<a href="http://archieyang.info/?tag=android" class="tag-link-33" title="1 个话题" style="font-size: 8pt;">Android</a>
+<a href="http://archieyang.info/?tag=cent-os" class="tag-link-10" title="1 个话题" style="font-size: 8pt;">Cent OS</a>
+<a href="http://archieyang.info/?tag=classmethod" class="tag-link-32" title="1 个话题" style="font-size: 8pt;">classmethod</a>
+<a href="http://archieyang.info/?tag=coursera" class="tag-link-12" title="1 个话题" style="font-size: 8pt;">Coursera</a>
+<a href="http://archieyang.info/?tag=decorators" class="tag-link-18" title="1 个话题" style="font-size: 8pt;">Decorators</a>
+<a href="http://archieyang.info/?tag=descriptor" class="tag-link-28" title="2 个话题" style="font-size: 11.6pt;">descriptor</a>
+<a href="http://archieyang.info/?tag=dict" class="tag-link-25" title="1 个话题" style="font-size: 8pt;">dict</a>
+<a href="http://archieyang.info/?tag=django" class="tag-link-42" title="1 个话题" style="font-size: 8pt;">django</a>
+<a href="http://archieyang.info/?tag=linux" class="tag-link-7" title="1 个话题" style="font-size: 8pt;">Linux</a>
+<a href="http://archieyang.info/?tag=list" class="tag-link-24" title="1 个话题" style="font-size: 8pt;">list</a>
+<a href="http://archieyang.info/?tag=list-comprehension" class="tag-link-16" title="1 个话题" style="font-size: 8pt;">List Comprehension</a>
+<a href="http://archieyang.info/?tag=property" class="tag-link-26" title="2 个话题" style="font-size: 11.6pt;">property</a>
+<a href="http://archieyang.info/?tag=python" class="tag-link-14" title="9 个话题" style="font-size: 22pt;">Python</a>
+<a href="http://archieyang.info/?tag=requestcontext" class="tag-link-43" title="1 个话题" style="font-size: 8pt;">RequestContext</a>
+<a href="http://archieyang.info/?tag=staticmethod" class="tag-link-31" title="1 个话题" style="font-size: 8pt;">staticmethod</a>
+<a href="http://archieyang.info/?tag=sublime-text-2" class="tag-link-21" title="1 个话题" style="font-size: 8pt;">Sublime Text 2</a>
+<a href="http://archieyang.info/?tag=with-statement" class="tag-link-17" title="1 个话题" style="font-size: 8pt;">with statement</a>
+<a href="http://archieyang.info/?tag=%e4%b8%8b%e8%bd%bd" class="tag-link-13" title="1 个话题" style="font-size: 8pt;">下载</a>
+<a href="http://archieyang.info/?tag=%e6%88%90%e9%95%bf" class="tag-link-9" title="1 个话题" style="font-size: 8pt;">成长</a>
+<a href="http://archieyang.info/?tag=%e6%8f%92%e4%bb%b6" class="tag-link-22" title="1 个话题" style="font-size: 8pt;">插件</a>
+<a href="http://archieyang.info/?tag=%e6%97%a7%e5%bc%8f%e7%b1%bb%e5%9e%8b" class="tag-link-29" title="1 个话题" style="font-size: 8pt;">旧式类型</a>
+<a href="http://archieyang.info/?tag=%e7%94%9f%e6%88%90%e5%99%a8" class="tag-link-20" title="1 个话题" style="font-size: 8pt;">生成器</a>
+<a href="http://archieyang.info/?tag=%e7%94%9f%e6%b4%bb" class="tag-link-8" title="1 个话题" style="font-size: 8pt;">生活</a>
+<a href="http://archieyang.info/?tag=%e7%bf%bb%e8%af%91" class="tag-link-30" title="1 个话题" style="font-size: 8pt;">翻译</a>
+<a href="http://archieyang.info/?tag=%e8%ae%bf%e9%97%ae%e5%99%a8" class="tag-link-27" title="2 个话题" style="font-size: 11.6pt;">访问器</a>
+<a href="http://archieyang.info/?tag=%e8%bf%9c%e7%a8%8b%e6%a1%8c%e9%9d%a2" class="tag-link-11" title="1 个话题" style="font-size: 8pt;">远程桌面</a>
+<a href="http://archieyang.info/?tag=%e8%bf%ad%e4%bb%a3%e5%99%a8" class="tag-link-19" title="1 个话题" style="font-size: 8pt;">迭代器</a>
+<a href="http://archieyang.info/?tag=%e9%ad%94%e6%b3%95%e6%96%b9%e6%b3%95" class="tag-link-23" title="1 个话题" style="font-size: 8pt;">魔法方法</a></div>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://archieyang.info/?p=257" title="django中的RequestContext">django中的RequestContext</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=247" title="如何使用ActionBarSherlock[翻译]">如何使用ActionBarSherlock[翻译]</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=172" title="Python那些事儿（7）Descriptor Howto Guide的翻译">Python那些事儿（7）Descriptor Howto Guide的翻译</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=157" title="Python 那些事儿（6）拦截对象的属性访问">Python 那些事儿（6）拦截对象的属性访问</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=161" title="Python那些事儿（5）使用Property函数创建属性">Python那些事儿（5）使用Property函数创建属性</a>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments">Lee 发表在《<a href="http://archieyang.info/?page_id=5#comment-12">关于</a>》</li><li class="recentcomments">Lei 发表在《<a href="http://archieyang.info/?page_id=5#comment-11">关于</a>》</li><li class="recentcomments">Lee 发表在《<a href="http://archieyang.info/?page_id=5#comment-10">关于</a>》</li><li class="recentcomments"><a href="http://groups.tianya.cn/tribe/showArticle.jsp?groupId=551332&articleId=ce0926b7e6aa45615d38fbb471b047a0" rel="external nofollow" class="url">alvena</a> 发表在《<a href="http://archieyang.info/?p=157#comment-9">Python 那些事儿（6）拦截对象的属性访问</a>》</li><li class="recentcomments">funny 发表在《<a href="http://archieyang.info/?page_id=5#comment-7">关于</a>》</li></ul></aside><aside id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href="http://archieyang.info/?m=201305" title="2013 年五月">2013 年五月</a></li>
+	<li><a href="http://archieyang.info/?m=201303" title="2013 年三月">2013 年三月</a></li>
+	<li><a href="http://archieyang.info/?m=201301" title="2013 年一月">2013 年一月</a></li>
+	<li><a href="http://archieyang.info/?m=201212" title="2012 年十二月">2012 年十二月</a></li>
+	<li><a href="http://archieyang.info/?m=201211" title="2012 年十一月">2012 年十一月</a></li>
+		</ul>
+</aside><aside id="text-3" class="widget widget_text"><h2 class="widget-title">豆瓣秀</h2>			<div class="textwidget"><script type="text/javascript" src="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/saved_resource"></script>
+<br>
+<script type="text/javascript" src="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/saved_resource(1)"></script></div>
+		</aside>		</div><!-- #secondary .widget-area -->
+
+    </div> <!-- end #content -->
+        
+
+	<footer id="colophon" role="contentinfo">
+		<div id="site-generator">
+			© World Overflow            		</div>
+	</footer><!-- #colophon -->
+</div><!-- #container -->
+
+<script type="text/javascript" src="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/shCore.js"></script>
+<script type="text/javascript" src="./World Overflow   Python 那些事儿（6）拦截对象的属性访问_files/shBrushPython.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://archieyang.info/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://archieyang.info/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '帮助';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = '无法找到Brush：';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush不能设置 html-script选项';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+
+</div></body></html>

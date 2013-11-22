@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!-- saved from url=(0122)https://webcache.googleusercontent.com/search?q=cache:rTKOnI_1nosJ:archieyang.info/%3Fp%3D172+&cd=8&hl=zh-CN&ct=clnk&gl=cn -->
+<html lang="zh-CN" class="no-js" x-terminal-for-google=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="http://archieyang.info/?p=172">--><base href="."></head><body class="single single-post postid-172 single-format-standard custom-background single-author"><div style="background:#fff;border:1px solid #999;margin:-1px -1px 0;padding:0;"><div style="background:#ddd;border:1px solid #999;color:#000;font:13px arial,sans-serif;font-weight:normal;margin:12px;padding:8px;text-align:left">这是 Google 对 <a href="http://archieyang.info/?p=172" style="text-decoration:underline;color:#00c">http://archieyang.info/?p=172</a> 的缓存。 这是该网页在 2013年11月14日 04:26:49 GMT 的快照。 <a href="http://archieyang.info/?p=172" style="text-decoration:underline;color:#00c">当前页</a>在此期间可能已经更改。 <a href="http://support.google.com/websearch/bin/answer.py?hl=zh-CN&p=cached&answer=1687222" style="text-decoration:underline;color:#00c">了解详情</a><br>提示：要在此页面上快速找到您的搜索字词，请按 <b>Ctrl+F</b> 或者 <b>⌘-F</b>（苹果机），然后使用查找栏搜索。<br><br><div style="float:right"><a href="http://webcache.googleusercontent.com/search?q=cache:rTKOnI_1nosJ:archieyang.info/%3Fp%3D172&newwindow=1&hl=zh-CN&gl=cn&strip=1" style="text-decoration:underline;color:#00c">纯文字版本</a></div>
+<div>&nbsp;</div></div></div><div style="position:relative">
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>World Overflow | Python那些事儿（7）Descriptor Howto Guide的翻译</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://archieyang.info/wp/xmlrpc.php">
+
+
+<link rel="alternate" type="application/rss+xml" title="World Overflow » Feed" href="http://archieyang.info/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="World Overflow » 评论 Feed" href="http://archieyang.info/?feed=comments-rss2">
+<link rel="stylesheet" id="wm-css" href="./World Overflow   Python那些事儿（7）Descriptor Howto Guide的翻译_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="newsworthy_style-css" href="./World Overflow   Python那些事儿（7）Descriptor Howto Guide的翻译_files/style(1).css" type="text/css" media="all">
+<script type="text/javascript" src="./World Overflow   Python那些事儿（7）Descriptor Howto Guide的翻译_files/modernizr-2.6.1.min.js"></script>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（7）Descriptor Howto Guide的翻译_files/jquery.js"></script>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（7）Descriptor Howto Guide的翻译_files/scripts.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://archieyang.info/wp/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://archieyang.info/wp/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Python 那些事儿（6）拦截对象的属性访问" href="http://archieyang.info/?p=157">
+<link rel="next" title="如何使用ActionBarSherlock[翻译]" href="http://archieyang.info/?p=247">
+<meta name="generator" content="WordPress 3.5.1">
+<link rel="canonical" href="http://archieyang.info/?p=172">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #f2f2f2; background-image: url('http://archieyang.info/wp/wp-content/themes/newsworthy/library/images/bg.jpg'); background-repeat: repeat; background-position: top left; background-attachment: fixed; }
+</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+
+
+
+
+<nav id="access" role="navigation">
+    <div id="nav-wrap">
+            <h1 class="assistive-text section-heading">Main menu</h1>
+            <div class="skip-link screen-reader-text"><a href="http://archieyang.info/?p=172#content" title="Skip to content">Skip to content</a></div>
+            <div class="menu"><ul><li><a href="http://archieyang.info/" title="首页">首页</a></li><li class="page_item page-item-5"><a href="http://archieyang.info/?page_id=5">关于</a></li></ul></div>
+            
+    </div>
+</nav><!-- #access -->
+
+<div id="container">
+	<header id="branding" role="banner">
+      <div id="inner-header" class="clearfix">
+		<hgroup id="site-heading">
+			<h1 id="site-title"><a href="http://archieyang.info/" title="World Overflow" rel="home">World Overflow</a></h1>
+			<h2 id="site-description">archieyang.info | A very personal blog</h2>
+		</hgroup>
+        
+        <form role="search" method="get" id="searchform" action="http://archieyang.info/">
+	<div><label class="screen-reader-text" for="s">搜索：</label>
+	<input type="text" value="" name="s" id="s">
+	<input type="submit" id="searchsubmit" value="搜索">
+	</div>
+	</form>
+      </div>    
+      
+	</header><!-- #branding -->
+
+    <div id="content" class="clearfix">
+        
+        <div id="main" class="col620 clearfix" role="main">
+
+			
+				
+<article id="post-172" class="post-172 post type-post status-publish format-standard hentry category-python category-15 category-30 tag-classmethod tag-descriptor tag-python tag-staticmethod tag-30">
+	<div class="posted-meta">
+    	<div class="date-meta">
+        	<a href="http://archieyang.info/?p=172" rel="bookmark">03.18.13</a>
+        </div>
+        <div class="author-meta">
+        	by <a class="url fn n" href="http://archieyang.info/?author=1" title="View all posts by archieyang" rel="author">archieyang</a>        </div>
+    </div>
+	<header class="entry-header">
+		<h1 class="entry-title">Python那些事儿（7）Descriptor Howto Guide的翻译</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content post_content">
+		<p>原文：<a title="http://docs.python.org/2/howto/descriptor.html" href="http://docs.python.org/2/howto/descriptor.html">Descriptor Howto Guide</a></p>
+<p>作者：Raymond Hettinger</p>
+<h3></h3>
+<h1>摘要</h1>
+<p>本文定义了描述符，阐述了它的规则并解释了描述符是如何被调用的。除此之外，本文还详细介绍了一般的描述符和一些Python内置的描述符（包括函数，属性property，静态方法和类方法）的实现。针对这些概念，作者给出了等价的纯Python实现和对应的示例代码。</p>
+<p>了解描述符不仅会提供一个更大的工具集合，更会增加对Python工作机制及其优雅设计的理解。</p>
+<p><span id="more-172"></span></p>
+<h1>定义及简介</h1>
+<p>通常，descriptor是指具有“绑定行为”的对象特性，这些特性的访问方法被descriptor规则中的方法重写了。这些方法包括__get__(), __set__()和__del__()。实现了其中任何一个方法的对象就被称为描述符（descriptor）。</p>
+<p>特性（attribute）访问的基本行为是从一个对象的字典中获取（get），设置（set）或者删除特性。例如，a.x有这样一条查找链，它首先查找a.__dict__['x']，然后查找type(a).__dict__['x']，然后继续type(a)不包含metaclass的基类。如果查找到的值是一个定义了某个描述符方法的对象，那么Python就会重写默认的行为，转而调用描述的方法。这种替换发生的优先级取决于定义了那些描述符方法（data descriptor 还是non-data descriptor，后面有详细介绍）。注意，描述符只适用于新式的类和对象。</p>
+<p>描述符是一种十分强大且用途广泛的规则（protocol）。它是实现属性(properties)，方法，静态方法，类方法和super()函数背后的机制。它被Python用于实现新式类型（在2.2版本引入）。描述符简化了底层实现的C代码，并且为Python编程提供了一套更加灵活的工具。</p>
+<h1>描述符规则</h1>
+<pre class="brush: python; title: ; notranslate" title="">descr.__get__(self,&nbsp;obj,&nbsp;type=None)&nbsp;--&gt;&nbsp;value
+descr.__set__(self,&nbsp;obj,&nbsp;value)&nbsp;--&gt;&nbsp;None
+descr.__delete__(self,&nbsp;obj)&nbsp;--&gt;&nbsp;None
+</pre>
+<p>这就是关于描述符的全部方法。定义了其中任意一个方法的对象就被称为描述符，它会在查找特性时，重写默认的行为。</p>
+<p>如果一个对象定义了__get__()和__set__()两个函数，它就被称为一个数据描述符。而只定义了__get__()函数的描述符被称为非数据描述符（他们通常被用于方法，当然也可以有其他的用途）。</p>
+<p>数据描述符和非数据描述符的不同在于他们重写的行为和实例字典中条目的关系。如果一个实例字典中的条目与一个数据描述符重名，那么优先返回的是数据描述符。如果一个实例字典中的条目与一个非数据描述符重名，那么优先返回实例字典中的条目。</p>
+<p>如果要创建一个只读的数据描述符，需要定义__get__()和__set()__两个函数，__set()__函数需要在被调用时抛出一个AttributeError异常。定义一个抛出异常的占位符的__set__()函数就可以使得描述符变为数据描述符。</p>
+<h1>描述符的调用</h1>
+<p>一个描述符可以直接通过它的函数名被调用。例如，d.__get__(obj)。</p>
+<p>但是，通过属性访问来自动调用描述符的方法更为常见。例如，obj.d首先在obj的字典中查询d。如果d定义了__get__()方法，那么就会根据下面列出的优先级原则调用d.__get__(obj)。</p>
+<p>调用的细节取决于obj是一个对象还是一个类。不管哪种情况，描述符都只作用于新式的对象和类。一个类如果是object的子类，它就是新式的。</p>
+<p>对于对象而言，描述符的调用机制存在于object.__getattribute__()，它将b.x转换为type(b).__dict__['x'].__get__(b, type(b))。它的实现包含一个优先级链，在优先级链中，数据描述符具有高于实例变量的优先级，而实例变量具有高于非数据描述符的优先级，而__getattr__()被赋予了最低的优先级。完整的C语言实现可以再<a title="http://svn.python.org/view/python/trunk/Objects/object.c?view=markup" href="http://svn.python.org/view/python/trunk/Objects/object.c?view=markup">Object/object.c</a>中的<a title="http://docs.python.org/2/c-api/object.html#PyObject_GenericGetAttr" href="http://docs.python.org/2/c-api/object.html#PyObject_GenericGetAttr">PyObject_GenericGetAttr()</a>中找到。</p>
+<p>对于类型而言，描述符的调用机制存在于type.__getattribute__()中，它将B.x转化为B.__dict__['x'].__get__(None, B)。它的Python语言描述如下：</p>
+<pre class="brush: python; title: ; notranslate" title="">def __getattribute__(self, key):
+    "Emulate type_getattro() in Objects/typeobject.c"
+    v = object.__getattribute__(self, key)
+    if hasattr(v, '__get__'):
+        return v.__get__(None, self)
+    return v
+</pre>
+<p>这里需要注意的是</p>
+<ul>
+<li>描述符通过__getattribute__()方法被调用</li>
+<li>重写__getattribute__()方法会阻止描述符的自动调用</li>
+<li>__getattribute__()只存在于新式的类和对象中</li>
+<li>object.__getattribute__()和type.__getattribute__()对于__get__()的调用不同</li>
+<li>数据描述符会重写实例的字典</li>
+<li>非数据描述符会被实例的字典重写</li>
+</ul>
+<p>由super()函数返回的对象也具有一个普通的__getattribute__()方法来调用操作符。super(B, obj).m()搜索obj.__class__.__mro__来寻找B类型的直接的基类A，并返回A.__dict__['m'].__get__(obj, A). 如果m不是一个描述符，那么它会直接被返回。如果m不在字典中，Python会继续通过object.__getattribute__()查找。</p>
+<p>注意，在Python 2.2中，只有在m是一个数据描述符的情况下，super(B, obj).m()才会调用__get__()。在Python 2.3中，非数据描述符也会被调用，除非是在一个旧式的类中。这里的实现细节在<a title="http://svn.python.org/view/python/trunk/Objects/typeobject.c?view=markup" href="http://svn.python.org/view/python/trunk/Objects/typeobject.c?view=markup">Objects/typeobject.c</a>的super_getattro()中，一个等价的纯Python的实现可以在<a title="http://www.python.org/download/releases/2.2.3/descrintro/#cooperation" href="http://www.python.org/download/releases/2.2.3/descrintro/#cooperation">Guido’s Tutorial</a>中找到。</p>
+<p>以上的细节表明描述符机制内置于object，type和super()的__getattribute__()方法中。类型从object中继承了这种机制，或则是从某个具有类似功能的meta-class中获得。同样，类型可以通过重写__getattribute__()关闭描述符的调用。</p>
+<h1>描述符示例</h1>
+<p>下面的代码创建了一个类型，他的对象是能够在get和set操作时，打印信息的数据描述符。重写__getattribute__()方法可以为所有的特性实现这种行为。但是，在只需要选择监视几个特性的情况下，描述符更加有用。</p>
+<pre class="brush: python; title: ; notranslate" title="">class RevealAccess(object):
+    def __init__(self, initval=None, name='var'):
+        self.val = initval
+        self.name = name
+    def __get__(self,obj, objtype):
+        print 'Retrieving', self.name
+        return self.val
+    def __set__(self, obj, val):
+        print 'Updating', self.name
+        self.val = val
+&gt;&gt;&gt; class MyClass(object):
+    x = RevealClass(10, 'var "x"')
+    y = 5
+&gt;&gt;&gt; m = MyClass()
+&gt;&gt;&gt; m.x
+Retrieving var "x"
+10
+&gt;&gt;&gt; m.x = 20
+Updating var "x"
+&gt;&gt;&gt; m.x
+Retrieving var "x"
+20
+&gt;&gt;&gt; m.y
+5
+</pre>
+<p>可以看出，描述符的规则很简单却有很广泛的用途。某些应用场景十分常见，以至于他们已经被封装成了函数调用。属性(properties)，绑定和非绑定方法，静态方法和类方法都是基于描述符规则实现的。</p>
+<h1>属性Properties</h1>
+<p>数据描述符在特性被访问时，自动触发函数调用。使用property()函数是实现数据描述符的一种简洁的方法。它的函数签名（signature）如下：</p>
+<pre class="brush: python; title: ; notranslate" title="">property(fget=None, fset=None, fdel=None, doc=None) -&gt;property attribute
+</pre>
+<p>文档中给出了一个定义受控属性x的典型例子：</p>
+<pre class="brush: python; title: ; notranslate" title="">class C(object):
+    def getx(self): return self.__x
+    def setx(self, value): self.__x = value
+    def delx(self): del self.__x
+    x = property(getx, setx, delx, "I'm the 'x' property.")
+</pre>
+<p>就property()函数关于描述符机制的实现，下面给出了等价的纯Python实现。</p>
+<pre class="brush: python; title: ; notranslate" title="">class Property(object):
+    "Emulate PyProperty_Type() in Objects/descrobject.c"
+
+    def __init__(self, fget=None, fset=None, fdel=None, doc=None):
+        self.fget = fget
+        self.fset = fset
+        self.fdel = fdel
+        if doc is None and fget is not None:
+            doc = fget.__doc__
+        self.__doc__ = doc
+
+    def __get__(self, obj, objtype=None):
+        if obj is None:
+            return self
+        if self.fget is None:
+            raise AttributeError("unreadable attribute")
+        return self.fget(obj)
+
+    def __set__(self, obj, value):
+        if self.fset is None:
+            raise AttributeError("can't set attribute")
+        self.fset(obj, value)
+
+    def __delete__(self, obj):
+        if self.fdel is None:
+            raise AttributeError("can't delete attribute")
+        self.fdel(obj)
+
+    def getter(self, fget):
+        return type(self)(fget, self.fset, self.fdel, self.__doc__)
+
+    def setter(self, fset):
+        return type(self)(self.fget, fset, self.fdel, self.__doc__)
+
+    def deleter(self, fdel):
+        return type(self)(self.fget, self.fset, fdel, self.__doc__)
+</pre>
+<p>内建函数property()在用户接口提供特性访问权限，并且随后对特性的改变需要有函数介入的情况下，是非常有用的。<br>
+例如，一个电子表格的类可能会通过Cell(‘b10′).value提供对一个单元格值的访问。后来对程序的改进可能要求每次访问时，单元格的值需要被重新计算。但是，程序员可能不想影响到现存的直接访问特性的客户代码。解决的方法就是采用一个属性（property）数据描述符将对值特性的访问包装起来。</p>
+<pre class="brush: python; title: ; notranslate" title="">class Cell(object):
+    . . .
+    def getvalue(self, obj):
+        "Recalculate cell before returning value"
+        self.recalc()
+        return obj._value
+    value = property(getvalue)
+</pre>
+<h1>函数和方法</h1>
+<p>Python的面向对象特性建立在一个基于函数的环境上。非数据描述符将这两者紧密的联系起来。</p>
+<p>类的字典将方法作为函数存储。在一个类的定义中，方法通过关键字def和lambda被定义，这也是建立函数的一般方法。方法和普通函数唯一的区别在于，方法的第一个参数保留给了对象实例。根据Python的习惯，这个实例的引用被称为self，但是它也可以被命名为this或者其他的变量名。</p>
+<p>为了支持方法的调用，函数中包含了__get__()方法来在访问特性时绑定方法。这意味所有的函数都是非数据描述符，他们返回绑定还是非绑定函数取决于他们是被对象还是被类型调用。用纯Python表示，它的工作方式如下：</p>
+<pre class="brush: python; title: ; notranslate" title="">class Function(object):
+    . . .
+    def __get__(self, obj, objtype=None):
+        "Simulate func_descr_get() in Objects/funcobject.c"
+        return types.MethodType(self, obj, objtype)
+</pre>
+<p>启动一个解释器来看一下函数描述符在是如何工作的：</p>
+<pre class="brush: python; title: ; notranslate" title="">&gt;&gt;&gt; class D(object):
+     def f(self, x):
+          return x
+&gt;&gt;&gt; d = D()
+&gt;&gt;&gt; D.__dict__['f'] # Stored internally as a function
+
+&gt;&gt;&gt; D.f             # Get from a class becomes an unbound method
+
+&gt;&gt;&gt; d.f             # Get from an instance becomes a bound method
+&gt;
+</pre>
+<p>输出显示了绑定和非绑定的函数属于两种不同的类型。尽管他们可以被作为不同类型实现，Objects/classobject.c中PyMethod_Type的 C实现采用的是同一个对象的两种不同表示，使用时需要根据im_self的值是被设置，还是为NULL(C中等价的None)来判断。<br>
+同时，调用一个函数对象的效果也由im_self域决定。如果设置了im_self(表示绑定)，原始的函数（存储在im_func中）在被调用时，第一个参数被设置为实例，正如期望那样。如果没有绑定，所有的参数被直接传递给原始函数而不做任何修改。instancemethod_call()的C实现除了包含一些类型检查，并不是特别复杂。</p>
+<h1>静态方法和类方法</h1>
+<p>非数据的描述符提供了一种简单的机制来使得从函数到方法的转化更加多样化。</p>
+<p>我们回顾一下，函数因为实现了__get__()方法，所以当他们被作为属性访问时，可以被转化为方法。非数据描述符将obj.f(*args)调用转化为f(obj, *args)。klass.f(*args)变成了f(*args)。</p>
+<p>下面这个表单总结了绑定，和绑定最常见的两种变形。</p>
+<table border="1">
+<tbody>
+<tr>
+<th>变形</th>
+<th>从对象调用</th>
+<th>从类型调用</th>
+</tr>
+<tr>
+<th>函数</th>
+<th>f(obj, *args)</th>
+<th>f(*args)</th>
+</tr>
+<tr>
+<th>静态方法</th>
+<th>f(*args)</th>
+<th>f(*args)</th>
+</tr>
+<tr>
+<th>类方法</th>
+<th>f(type(obj), *args)</th>
+<th>f(klass, *args)</th>
+</tr>
+</tbody>
+</table>
+<p>静态方法直接返回底层的实现函数不做任何改变。调用c.f 或者C.f都等价于直接查找object.__getattribute__(c, “f”) 或者object.__getattribute__(C, “f”)。因此，这个函数在对象和类中的访问是等价的。</p>
+<p>不需要引用self的方法适合采用静态方法实现。</p>
+<p>例如，一个统计的包或许会为实验数据设计一个容器类。这个类为数据提供了常见的计算平均值的方法，平均值，中值，和其他描述这组数据的统计值。但是，或许有些函数在概念上和数据相关，但又不依赖于数据。例如，erf(x)利用统计方法处理变化曲线，但是它并不直接依赖于某个数据集合。它可以被一个对象或者类型调用：<tt>s.erf(1.5)&nbsp;--&gt;&nbsp;.9332</tt>&nbsp;或者<tt>Sample.erf(1.5)&nbsp;--&gt;&nbsp;.9332。</tt></p>
+<p>由于静态方法不加改变的返回底层的函数，下面的实例应该很容易理解：</p>
+<pre class="brush: python; title: ; notranslate" title="">&gt;&gt;&gt; class E(object):
+     def f(x):
+          print x
+     f = staticmethod(f)
+&gt;&gt;&gt; print E.f(3)
+3
+&gt;&gt;&gt; print E().f(3)
+3
+</pre>
+<p>采用非数据描述符规则，一个纯Python版的staticmethond()的实现如下：</p>
+<pre class="brush: python; title: ; notranslate" title="">class StaticMethod(object):
+ "Emulate PyStaticMethod_Type() in Objects/funcobject.c"
+
+ def __init__(self, f):
+      self.f = f
+
+ def __get__(self, obj, objtype=None):
+      return self.f
+</pre>
+<p>与静态方法不同，类方法需要在调用函数前将类型的引用添加到参数表里。无论调用者是对象还是类型，这种形式是一致的：</p>
+<pre class="brush: python; title: ; notranslate" title="">&gt;&gt;&gt; class E(object):
+     def f(klass, x):
+          return klass.__name__, x
+     f = classmethod(f)
+&gt;&gt;&gt; print E.f(3)
+('E', 3)
+&gt;&gt;&gt; print E().f(3)
+('E', 3)
+</pre>
+<p>类方法的这种行为在一个函数需要使用类型的引用而不关心底层数据时，是十分有用的。类方法的一个常见用法是创建类的替代构造函数。在Python 2.3中，类函数dict.fromkeys()可以使用一个键的序列创建一个新的字典。纯Python的等价实现如下：</p>
+<pre class="brush: python; title: ; notranslate" title="">class Dict(object):
+    . . .
+    def fromkeys(klass, iterable, value=None):
+        "Emulate dict_fromkeys() in Objects/dictobject.c"
+        d = klass()
+        for key in iterable:
+            d[key] = value
+        return d
+    fromkeys = classmethod(fromkeys)
+</pre>
+<p>现在一个具有唯一键的新的字典可以按照如下方法构建：</p>
+<pre class="brush: python; title: ; notranslate" title="">&gt;&gt;&gt; Dict.fromkeys('abracadabra')
+{'a': None, 'r': None, 'b': None, 'c': None, 'd': None}
+</pre>
+<p>运用非数据描述符规则，一个纯Python版本的classmethod()实现如下：</p>
+<pre class="brush: python; title: ; notranslate" title="">class ClassMethod(object):
+     "Emulate PyClassMethod_Type() in Objects/funcobject.c"
+
+     def __init__(self, f):
+          self.f = f
+
+     def __get__(self, obj, klass=None):
+          if klass is None:
+               klass = type(obj)
+          def newfunc(*args):
+               return self.f(klass, *args)
+          return newfunc
+</pre>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://archieyang.info/?cat=14" title="查看 Python 中的全部文章" rel="category">Python</a>, <a href="http://archieyang.info/?cat=15" title="查看 编程语言 中的全部文章" rel="category">编程语言</a>, <a href="http://archieyang.info/?cat=30" title="查看 翻译 中的全部文章" rel="category">翻译</a> and tagged <a href="http://archieyang.info/?tag=classmethod" rel="tag">classmethod</a>, <a href="http://archieyang.info/?tag=descriptor" rel="tag">descriptor</a>, <a href="http://archieyang.info/?tag=python" rel="tag">Python</a>, <a href="http://archieyang.info/?tag=staticmethod" rel="tag">staticmethod</a>, <a href="http://archieyang.info/?tag=%e7%bf%bb%e8%af%91" rel="tag">翻译</a>. Bookmark the <a href="http://archieyang.info/?p=172" title="Permalink to Python那些事儿（7）Descriptor Howto Guide的翻译" rel="bookmark">permalink</a>.
+			</footer><!-- .entry-meta -->
+</article><!-- #post-172 -->
+
+					<nav id="nav-below">
+		<h1 class="assistive-text section-heading">Post navigation</h1>
+
+	
+		<div class="nav-previous"><a href="http://archieyang.info/?p=157" rel="prev"><span class="meta-nav">←</span> Previous</a></div>		<div class="nav-next"><a href="http://archieyang.info/?p=247" rel="next">Next <span class="meta-nav">→</span></a></div>
+	
+	</nav><!-- #nav-below -->
+	
+				
+			
+        </div> <!-- end #main -->
+
+        		<div id="sidebar" class="widget-area col300" role="complementary">
+						<aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-33"><a href="http://archieyang.info/?cat=33" title="查看 Android 下的所有文章">Android</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://archieyang.info/?cat=12" title="查看 Coursera 下的所有文章">Coursera</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://archieyang.info/?cat=7" title="查看 Linux 下的所有文章">Linux</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://archieyang.info/?cat=14" title="查看 Python 下的所有文章">Python</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://archieyang.info/?cat=5" title="查看 一种生活 下的所有文章">一种生活</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://archieyang.info/?cat=15" title="查看 编程语言 下的所有文章">编程语言</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="http://archieyang.info/?cat=30" title="查看 翻译 下的所有文章">翻译</a>
+</li>
+		</ul>
+</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h2 class="widget-title">标签</h2><div class="tagcloud"><a href="http://archieyang.info/?tag=actionbar" class="tag-link-34" title="1 个话题" style="font-size: 8pt;">ActionBar</a>
+<a href="http://archieyang.info/?tag=actionbarsherlock" class="tag-link-35" title="1 个话题" style="font-size: 8pt;">ActionBarSherlock</a>
+<a href="http://archieyang.info/?tag=android" class="tag-link-33" title="1 个话题" style="font-size: 8pt;">Android</a>
+<a href="http://archieyang.info/?tag=cent-os" class="tag-link-10" title="1 个话题" style="font-size: 8pt;">Cent OS</a>
+<a href="http://archieyang.info/?tag=classmethod" class="tag-link-32" title="1 个话题" style="font-size: 8pt;">classmethod</a>
+<a href="http://archieyang.info/?tag=coursera" class="tag-link-12" title="1 个话题" style="font-size: 8pt;">Coursera</a>
+<a href="http://archieyang.info/?tag=decorators" class="tag-link-18" title="1 个话题" style="font-size: 8pt;">Decorators</a>
+<a href="http://archieyang.info/?tag=descriptor" class="tag-link-28" title="2 个话题" style="font-size: 11.6pt;">descriptor</a>
+<a href="http://archieyang.info/?tag=dict" class="tag-link-25" title="1 个话题" style="font-size: 8pt;">dict</a>
+<a href="http://archieyang.info/?tag=django" class="tag-link-42" title="1 个话题" style="font-size: 8pt;">django</a>
+<a href="http://archieyang.info/?tag=linux" class="tag-link-7" title="1 个话题" style="font-size: 8pt;">Linux</a>
+<a href="http://archieyang.info/?tag=list" class="tag-link-24" title="1 个话题" style="font-size: 8pt;">list</a>
+<a href="http://archieyang.info/?tag=list-comprehension" class="tag-link-16" title="1 个话题" style="font-size: 8pt;">List Comprehension</a>
+<a href="http://archieyang.info/?tag=property" class="tag-link-26" title="2 个话题" style="font-size: 11.6pt;">property</a>
+<a href="http://archieyang.info/?tag=python" class="tag-link-14" title="9 个话题" style="font-size: 22pt;">Python</a>
+<a href="http://archieyang.info/?tag=requestcontext" class="tag-link-43" title="1 个话题" style="font-size: 8pt;">RequestContext</a>
+<a href="http://archieyang.info/?tag=staticmethod" class="tag-link-31" title="1 个话题" style="font-size: 8pt;">staticmethod</a>
+<a href="http://archieyang.info/?tag=sublime-text-2" class="tag-link-21" title="1 个话题" style="font-size: 8pt;">Sublime Text 2</a>
+<a href="http://archieyang.info/?tag=with-statement" class="tag-link-17" title="1 个话题" style="font-size: 8pt;">with statement</a>
+<a href="http://archieyang.info/?tag=%e4%b8%8b%e8%bd%bd" class="tag-link-13" title="1 个话题" style="font-size: 8pt;">下载</a>
+<a href="http://archieyang.info/?tag=%e6%88%90%e9%95%bf" class="tag-link-9" title="1 个话题" style="font-size: 8pt;">成长</a>
+<a href="http://archieyang.info/?tag=%e6%8f%92%e4%bb%b6" class="tag-link-22" title="1 个话题" style="font-size: 8pt;">插件</a>
+<a href="http://archieyang.info/?tag=%e6%97%a7%e5%bc%8f%e7%b1%bb%e5%9e%8b" class="tag-link-29" title="1 个话题" style="font-size: 8pt;">旧式类型</a>
+<a href="http://archieyang.info/?tag=%e7%94%9f%e6%88%90%e5%99%a8" class="tag-link-20" title="1 个话题" style="font-size: 8pt;">生成器</a>
+<a href="http://archieyang.info/?tag=%e7%94%9f%e6%b4%bb" class="tag-link-8" title="1 个话题" style="font-size: 8pt;">生活</a>
+<a href="http://archieyang.info/?tag=%e7%bf%bb%e8%af%91" class="tag-link-30" title="1 个话题" style="font-size: 8pt;">翻译</a>
+<a href="http://archieyang.info/?tag=%e8%ae%bf%e9%97%ae%e5%99%a8" class="tag-link-27" title="2 个话题" style="font-size: 11.6pt;">访问器</a>
+<a href="http://archieyang.info/?tag=%e8%bf%9c%e7%a8%8b%e6%a1%8c%e9%9d%a2" class="tag-link-11" title="1 个话题" style="font-size: 8pt;">远程桌面</a>
+<a href="http://archieyang.info/?tag=%e8%bf%ad%e4%bb%a3%e5%99%a8" class="tag-link-19" title="1 个话题" style="font-size: 8pt;">迭代器</a>
+<a href="http://archieyang.info/?tag=%e9%ad%94%e6%b3%95%e6%96%b9%e6%b3%95" class="tag-link-23" title="1 个话题" style="font-size: 8pt;">魔法方法</a></div>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://archieyang.info/?p=257" title="django中的RequestContext">django中的RequestContext</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=247" title="如何使用ActionBarSherlock[翻译]">如何使用ActionBarSherlock[翻译]</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=172" title="Python那些事儿（7）Descriptor Howto Guide的翻译">Python那些事儿（7）Descriptor Howto Guide的翻译</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=157" title="Python 那些事儿（6）拦截对象的属性访问">Python 那些事儿（6）拦截对象的属性访问</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=161" title="Python那些事儿（5）使用Property函数创建属性">Python那些事儿（5）使用Property函数创建属性</a>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments">Lee 发表在《<a href="http://archieyang.info/?page_id=5#comment-12">关于</a>》</li><li class="recentcomments">Lei 发表在《<a href="http://archieyang.info/?page_id=5#comment-11">关于</a>》</li><li class="recentcomments">Lee 发表在《<a href="http://archieyang.info/?page_id=5#comment-10">关于</a>》</li><li class="recentcomments"><a href="http://groups.tianya.cn/tribe/showArticle.jsp?groupId=551332&articleId=ce0926b7e6aa45615d38fbb471b047a0" rel="external nofollow" class="url">alvena</a> 发表在《<a href="http://archieyang.info/?p=157#comment-9">Python 那些事儿（6）拦截对象的属性访问</a>》</li><li class="recentcomments">funny 发表在《<a href="http://archieyang.info/?page_id=5#comment-7">关于</a>》</li></ul></aside><aside id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href="http://archieyang.info/?m=201305" title="2013 年五月">2013 年五月</a></li>
+	<li><a href="http://archieyang.info/?m=201303" title="2013 年三月">2013 年三月</a></li>
+	<li><a href="http://archieyang.info/?m=201301" title="2013 年一月">2013 年一月</a></li>
+	<li><a href="http://archieyang.info/?m=201212" title="2012 年十二月">2012 年十二月</a></li>
+	<li><a href="http://archieyang.info/?m=201211" title="2012 年十一月">2012 年十一月</a></li>
+		</ul>
+</aside><aside id="text-3" class="widget widget_text"><h2 class="widget-title">豆瓣秀</h2>			<div class="textwidget"><script type="text/javascript" src="./World Overflow   Python那些事儿（7）Descriptor Howto Guide的翻译_files/saved_resource"></script>
+<br>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（7）Descriptor Howto Guide的翻译_files/saved_resource(1)"></script></div>
+		</aside>		</div><!-- #secondary .widget-area -->
+
+    </div> <!-- end #content -->
+        
+
+	<footer id="colophon" role="contentinfo">
+		<div id="site-generator">
+			© World Overflow            		</div>
+	</footer><!-- #colophon -->
+</div><!-- #container -->
+
+<script type="text/javascript" src="./World Overflow   Python那些事儿（7）Descriptor Howto Guide的翻译_files/shCore.js"></script>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（7）Descriptor Howto Guide的翻译_files/shBrushPython.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://archieyang.info/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://archieyang.info/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '帮助';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = '无法找到Brush：';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush不能设置 html-script选项';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+
+</div></body></html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!-- saved from url=(0122)https://webcache.googleusercontent.com/search?q=cache:My1OMn7IukcJ:archieyang.info/%3Fp%3D161+&cd=6&hl=zh-CN&ct=clnk&gl=cn -->
+<html lang="zh-CN" class="no-js" x-terminal-for-google=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="http://archieyang.info/?p=161">--><base href="."></head><body class="single single-post postid-161 single-format-standard custom-background single-author"><div style="background:#fff;border:1px solid #999;margin:-1px -1px 0;padding:0;"><div style="background:#ddd;border:1px solid #999;color:#000;font:13px arial,sans-serif;font-weight:normal;margin:12px;padding:8px;text-align:left">这是 Google 对 <a href="http://archieyang.info/?p=161" style="text-decoration:underline;color:#00c">http://archieyang.info/?p=161</a> 的缓存。 这是该网页在 2013年11月12日 18:18:14 GMT 的快照。 <a href="http://archieyang.info/?p=161" style="text-decoration:underline;color:#00c">当前页</a>在此期间可能已经更改。 <a href="http://support.google.com/websearch/bin/answer.py?hl=zh-CN&p=cached&answer=1687222" style="text-decoration:underline;color:#00c">了解详情</a><br>提示：要在此页面上快速找到您的搜索字词，请按 <b>Ctrl+F</b> 或者 <b>⌘-F</b>（苹果机），然后使用查找栏搜索。<br><br><div style="float:right"><a href="http://webcache.googleusercontent.com/search?q=cache:My1OMn7IukcJ:archieyang.info/%3Fp%3D161&newwindow=1&hl=zh-CN&gl=cn&strip=1" style="text-decoration:underline;color:#00c">纯文字版本</a></div>
+<div>&nbsp;</div></div></div><div style="position:relative">
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>World Overflow | Python那些事儿（5）使用Property函数创建属性</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://archieyang.info/wp/xmlrpc.php">
+
+
+<link rel="alternate" type="application/rss+xml" title="World Overflow » Feed" href="http://archieyang.info/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="World Overflow » 评论 Feed" href="http://archieyang.info/?feed=comments-rss2">
+<link rel="stylesheet" id="wm-css" href="./World Overflow   Python那些事儿（5）使用Property函数创建属性_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="newsworthy_style-css" href="./World Overflow   Python那些事儿（5）使用Property函数创建属性_files/style(1).css" type="text/css" media="all">
+<script type="text/javascript" src="./World Overflow   Python那些事儿（5）使用Property函数创建属性_files/modernizr-2.6.1.min.js"></script>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（5）使用Property函数创建属性_files/jquery.js"></script>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（5）使用Property函数创建属性_files/scripts.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://archieyang.info/wp/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://archieyang.info/wp/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Python那些事儿（4）实现类似于序列和字典行为的类" href="http://archieyang.info/?p=146">
+<link rel="next" title="Python 那些事儿（6）拦截对象的属性访问" href="http://archieyang.info/?p=157">
+<meta name="generator" content="WordPress 3.5.1">
+<link rel="canonical" href="http://archieyang.info/?p=161">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #f2f2f2; background-image: url('http://archieyang.info/wp/wp-content/themes/newsworthy/library/images/bg.jpg'); background-repeat: repeat; background-position: top left; background-attachment: fixed; }
+</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+
+
+
+
+<nav id="access" role="navigation">
+    <div id="nav-wrap">
+            <h1 class="assistive-text section-heading">Main menu</h1>
+            <div class="skip-link screen-reader-text"><a href="http://archieyang.info/?p=161#content" title="Skip to content">Skip to content</a></div>
+            <div class="menu"><ul><li><a href="http://archieyang.info/" title="首页">首页</a></li><li class="page_item page-item-5"><a href="http://archieyang.info/?page_id=5">关于</a></li></ul></div>
+            
+    </div>
+</nav><!-- #access -->
+
+<div id="container">
+	<header id="branding" role="banner">
+      <div id="inner-header" class="clearfix">
+		<hgroup id="site-heading">
+			<h1 id="site-title"><a href="http://archieyang.info/" title="World Overflow" rel="home">World Overflow</a></h1>
+			<h2 id="site-description">archieyang.info | A very personal blog</h2>
+		</hgroup>
+        
+        <form role="search" method="get" id="searchform" action="http://archieyang.info/">
+	<div><label class="screen-reader-text" for="s">搜索：</label>
+	<input type="text" value="" name="s" id="s">
+	<input type="submit" id="searchsubmit" value="搜索">
+	</div>
+	</form>
+      </div>    
+      
+	</header><!-- #branding -->
+
+    <div id="content" class="clearfix">
+        
+        <div id="main" class="col620 clearfix" role="main">
+
+			
+				
+<article id="post-161" class="post-161 post type-post status-publish format-standard hentry category-python category-15 tag-descriptor tag-property tag-python tag-27">
+	<div class="posted-meta">
+    	<div class="date-meta">
+        	<a href="http://archieyang.info/?p=161" rel="bookmark">03.17.13</a>
+        </div>
+        <div class="author-meta">
+        	by <a class="url fn n" href="http://archieyang.info/?author=1" title="View all posts by archieyang" rel="author">archieyang</a>        </div>
+    </div>
+	<header class="entry-header">
+		<h1 class="entry-title">Python那些事儿（5）使用Property函数创建属性</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content post_content">
+		<h1>1.访问器</h1>
+<p>访问器（accessor methods）一个简单的方法，能够使用个一些函数来获得属性，或者给属性赋值。下面是一个访问器的例子：</p>
+<pre class="brush: python; title: ; notranslate" title="">class Rectangle:
+    def __init__(self):
+        self.width = 0
+        self.height = 0
+    def setSize(self, size):
+        self.width, self.height = size
+    def getSize(self):
+        return self.width, self.height
+</pre>
+<p><span id="more-161"></span><br>
+这里的getSize和setSize方法是一个名为size的假想特性(attributes)的访问器方法。这里的问题是，如果某天真的为这个类设计了一个size属性，那之前的代码都要修改。（比如获取size从rectangle.getSize()改为rectangle.size，修改size从rectangle.setSize(value)改为rectangle.size=value）。实际上Python提供了隐藏访问器方法，使用这些方法可以让所有特性（attribute）看起来一样，这些通过访问器定义的特性（attributes）被称为属性(properties)。Python中有两种创建属性(properties)的机制，本文主要讨论新式类中提供的Property函数。</p>
+<h1>2.使用property函数</h1>
+<p>如果已经编写了上面的Rectangle类，只要稍作就该就可以将size变为类的属性。</p>
+<pre class="brush: python; title: ; notranslate" title="">__metaclass__ = type
+class Rectangle:
+    def __init__(self):
+        self.width = 0
+        self.height = 0
+    def setSize(self, size):
+        self.width, self.height = size
+    def getSize(self):
+        return self.width, self.height
+    size = propery(getSize, setSize)
+</pre>
+<p>property函数有四个参数，分别为fget, fset, fdel和doc。前三个属性分别控制属性的读，写和删除，doc是一个文档字符串。可以通过设置这些参数中的一个或几个（或0个）来实现只读，只写，读写，不可删除等具有不同操作的属性。<br>
+下面的例子展示了如何操作这个新的Rectangle类的实例。</p>
+<pre class="brush: python; title: ; notranslate" title="">&gt;&gt;&gt; r = Rectangle()
+&gt;&gt;&gt; r.width = 10
+&gt;&gt;&gt; r.height = 5
+&gt;&gt;&gt; r.size
+(10, 5)
+&gt;&gt;&gt; r.size = 150, 100
+&gt;&gt;&gt; r.width
+150
+
+</pre>
+<h1>3.property函数的实现</h1>
+<p>property函数实际上并不是一个真正函数，而是一个具有特殊方法的类。在Python中这种类的对象被称为描述符（descriptor）。想更深入的了解descriptor可以看这篇<a title="Descriptor Howto Guide" href="http://docs.python.org/2/howto/descriptor.html">Descriptor Howto Guide</a>，也可以看我后面翻译的版本。</p>
+<h1>参考</h1>
+<p>1.《Python基础教程》</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://archieyang.info/?cat=14" title="查看 Python 中的全部文章" rel="category">Python</a>, <a href="http://archieyang.info/?cat=15" title="查看 编程语言 中的全部文章" rel="category">编程语言</a> and tagged <a href="http://archieyang.info/?tag=descriptor" rel="tag">descriptor</a>, <a href="http://archieyang.info/?tag=property" rel="tag">property</a>, <a href="http://archieyang.info/?tag=python" rel="tag">Python</a>, <a href="http://archieyang.info/?tag=%e8%ae%bf%e9%97%ae%e5%99%a8" rel="tag">访问器</a>. Bookmark the <a href="http://archieyang.info/?p=161" title="Permalink to Python那些事儿（5）使用Property函数创建属性" rel="bookmark">permalink</a>.
+			</footer><!-- .entry-meta -->
+</article><!-- #post-161 -->
+
+					<nav id="nav-below">
+		<h1 class="assistive-text section-heading">Post navigation</h1>
+
+	
+		<div class="nav-previous"><a href="http://archieyang.info/?p=146" rel="prev"><span class="meta-nav">←</span> Previous</a></div>		<div class="nav-next"><a href="http://archieyang.info/?p=157" rel="next">Next <span class="meta-nav">→</span></a></div>
+	
+	</nav><!-- #nav-below -->
+	
+				
+			
+        </div> <!-- end #main -->
+
+        		<div id="sidebar" class="widget-area col300" role="complementary">
+						<aside id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-33"><a href="http://archieyang.info/?cat=33" title="查看 Android 下的所有文章">Android</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://archieyang.info/?cat=12" title="查看 Coursera 下的所有文章">Coursera</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://archieyang.info/?cat=7" title="查看 Linux 下的所有文章">Linux</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://archieyang.info/?cat=14" title="查看 Python 下的所有文章">Python</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://archieyang.info/?cat=5" title="查看 一种生活 下的所有文章">一种生活</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://archieyang.info/?cat=15" title="查看 编程语言 下的所有文章">编程语言</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="http://archieyang.info/?cat=30" title="查看 翻译 下的所有文章">翻译</a>
+</li>
+		</ul>
+</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h2 class="widget-title">标签</h2><div class="tagcloud"><a href="http://archieyang.info/?tag=actionbar" class="tag-link-34" title="1 个话题" style="font-size: 8pt;">ActionBar</a>
+<a href="http://archieyang.info/?tag=actionbarsherlock" class="tag-link-35" title="1 个话题" style="font-size: 8pt;">ActionBarSherlock</a>
+<a href="http://archieyang.info/?tag=android" class="tag-link-33" title="1 个话题" style="font-size: 8pt;">Android</a>
+<a href="http://archieyang.info/?tag=cent-os" class="tag-link-10" title="1 个话题" style="font-size: 8pt;">Cent OS</a>
+<a href="http://archieyang.info/?tag=classmethod" class="tag-link-32" title="1 个话题" style="font-size: 8pt;">classmethod</a>
+<a href="http://archieyang.info/?tag=coursera" class="tag-link-12" title="1 个话题" style="font-size: 8pt;">Coursera</a>
+<a href="http://archieyang.info/?tag=decorators" class="tag-link-18" title="1 个话题" style="font-size: 8pt;">Decorators</a>
+<a href="http://archieyang.info/?tag=descriptor" class="tag-link-28" title="2 个话题" style="font-size: 11.6pt;">descriptor</a>
+<a href="http://archieyang.info/?tag=dict" class="tag-link-25" title="1 个话题" style="font-size: 8pt;">dict</a>
+<a href="http://archieyang.info/?tag=django" class="tag-link-42" title="1 个话题" style="font-size: 8pt;">django</a>
+<a href="http://archieyang.info/?tag=linux" class="tag-link-7" title="1 个话题" style="font-size: 8pt;">Linux</a>
+<a href="http://archieyang.info/?tag=list" class="tag-link-24" title="1 个话题" style="font-size: 8pt;">list</a>
+<a href="http://archieyang.info/?tag=list-comprehension" class="tag-link-16" title="1 个话题" style="font-size: 8pt;">List Comprehension</a>
+<a href="http://archieyang.info/?tag=property" class="tag-link-26" title="2 个话题" style="font-size: 11.6pt;">property</a>
+<a href="http://archieyang.info/?tag=python" class="tag-link-14" title="9 个话题" style="font-size: 22pt;">Python</a>
+<a href="http://archieyang.info/?tag=requestcontext" class="tag-link-43" title="1 个话题" style="font-size: 8pt;">RequestContext</a>
+<a href="http://archieyang.info/?tag=staticmethod" class="tag-link-31" title="1 个话题" style="font-size: 8pt;">staticmethod</a>
+<a href="http://archieyang.info/?tag=sublime-text-2" class="tag-link-21" title="1 个话题" style="font-size: 8pt;">Sublime Text 2</a>
+<a href="http://archieyang.info/?tag=with-statement" class="tag-link-17" title="1 个话题" style="font-size: 8pt;">with statement</a>
+<a href="http://archieyang.info/?tag=%e4%b8%8b%e8%bd%bd" class="tag-link-13" title="1 个话题" style="font-size: 8pt;">下载</a>
+<a href="http://archieyang.info/?tag=%e6%88%90%e9%95%bf" class="tag-link-9" title="1 个话题" style="font-size: 8pt;">成长</a>
+<a href="http://archieyang.info/?tag=%e6%8f%92%e4%bb%b6" class="tag-link-22" title="1 个话题" style="font-size: 8pt;">插件</a>
+<a href="http://archieyang.info/?tag=%e6%97%a7%e5%bc%8f%e7%b1%bb%e5%9e%8b" class="tag-link-29" title="1 个话题" style="font-size: 8pt;">旧式类型</a>
+<a href="http://archieyang.info/?tag=%e7%94%9f%e6%88%90%e5%99%a8" class="tag-link-20" title="1 个话题" style="font-size: 8pt;">生成器</a>
+<a href="http://archieyang.info/?tag=%e7%94%9f%e6%b4%bb" class="tag-link-8" title="1 个话题" style="font-size: 8pt;">生活</a>
+<a href="http://archieyang.info/?tag=%e7%bf%bb%e8%af%91" class="tag-link-30" title="1 个话题" style="font-size: 8pt;">翻译</a>
+<a href="http://archieyang.info/?tag=%e8%ae%bf%e9%97%ae%e5%99%a8" class="tag-link-27" title="2 个话题" style="font-size: 11.6pt;">访问器</a>
+<a href="http://archieyang.info/?tag=%e8%bf%9c%e7%a8%8b%e6%a1%8c%e9%9d%a2" class="tag-link-11" title="1 个话题" style="font-size: 8pt;">远程桌面</a>
+<a href="http://archieyang.info/?tag=%e8%bf%ad%e4%bb%a3%e5%99%a8" class="tag-link-19" title="1 个话题" style="font-size: 8pt;">迭代器</a>
+<a href="http://archieyang.info/?tag=%e9%ad%94%e6%b3%95%e6%96%b9%e6%b3%95" class="tag-link-23" title="1 个话题" style="font-size: 8pt;">魔法方法</a></div>
+</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://archieyang.info/?p=257" title="django中的RequestContext">django中的RequestContext</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=247" title="如何使用ActionBarSherlock[翻译]">如何使用ActionBarSherlock[翻译]</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=172" title="Python那些事儿（7）Descriptor Howto Guide的翻译">Python那些事儿（7）Descriptor Howto Guide的翻译</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=157" title="Python 那些事儿（6）拦截对象的属性访问">Python 那些事儿（6）拦截对象的属性访问</a>
+						</li>
+					<li>
+				<a href="http://archieyang.info/?p=161" title="Python那些事儿（5）使用Property函数创建属性">Python那些事儿（5）使用Property函数创建属性</a>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments">Lee 发表在《<a href="http://archieyang.info/?page_id=5#comment-12">关于</a>》</li><li class="recentcomments">Lei 发表在《<a href="http://archieyang.info/?page_id=5#comment-11">关于</a>》</li><li class="recentcomments">Lee 发表在《<a href="http://archieyang.info/?page_id=5#comment-10">关于</a>》</li><li class="recentcomments"><a href="http://groups.tianya.cn/tribe/showArticle.jsp?groupId=551332&articleId=ce0926b7e6aa45615d38fbb471b047a0" rel="external nofollow" class="url">alvena</a> 发表在《<a href="http://archieyang.info/?p=157#comment-9">Python 那些事儿（6）拦截对象的属性访问</a>》</li><li class="recentcomments">funny 发表在《<a href="http://archieyang.info/?page_id=5#comment-7">关于</a>》</li></ul></aside><aside id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href="http://archieyang.info/?m=201305" title="2013 年五月">2013 年五月</a></li>
+	<li><a href="http://archieyang.info/?m=201303" title="2013 年三月">2013 年三月</a></li>
+	<li><a href="http://archieyang.info/?m=201301" title="2013 年一月">2013 年一月</a></li>
+	<li><a href="http://archieyang.info/?m=201212" title="2012 年十二月">2012 年十二月</a></li>
+	<li><a href="http://archieyang.info/?m=201211" title="2012 年十一月">2012 年十一月</a></li>
+		</ul>
+</aside><aside id="text-3" class="widget widget_text"><h2 class="widget-title">豆瓣秀</h2>			<div class="textwidget"><script type="text/javascript" src="./World Overflow   Python那些事儿（5）使用Property函数创建属性_files/saved_resource"></script>
+<br>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（5）使用Property函数创建属性_files/saved_resource(1)"></script></div>
+		</aside>		</div><!-- #secondary .widget-area -->
+
+    </div> <!-- end #content -->
+        
+
+	<footer id="colophon" role="contentinfo">
+		<div id="site-generator">
+			© World Overflow            		</div>
+	</footer><!-- #colophon -->
+</div><!-- #container -->
+
+<script type="text/javascript" src="./World Overflow   Python那些事儿（5）使用Property函数创建属性_files/shCore.js"></script>
+<script type="text/javascript" src="./World Overflow   Python那些事儿（5）使用Property函数创建属性_files/shBrushPython.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://archieyang.info/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.83c";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://archieyang.info/wp/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.83c";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '帮助';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = '无法找到Brush：';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush不能设置 html-script选项';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+
+</div></body></html>
